@@ -3,8 +3,9 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.care.mybatis.myMapper"><!-- namespace= mapper의 위치를 저장한 이름. 다른거 써도 o -->
+
 	<!-- 쿼리문 작성 -->	<!-- mybatis_config.xml에서 만든 return 타입, dto-->
 	<select id="listAll" resultType="dto">select * from mybatis_test</select>
-																		<!-- DAO에서 ,num으로 설정한 값 -->
+																		<!-- #{num} 이란? TestDAO에서 ,num으로 설정해서 넘겨준 값을 받아오는 것 -->
 	<select id="list" resultType="dto">select * from mybatis_test where num=#{num}</select>
 </mapper>
