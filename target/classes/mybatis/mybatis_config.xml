@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 쿼리문 결과값을 어떤 타입으로 받을지 정의해줌 -->
+	<typeAliases>
+		<typeAlias alias="dto" type="com.care.dto.TestDTO"/> <!-- TestDTO 형태로 return값을 취한다. -->
+	</typeAliases>
+</configuration>

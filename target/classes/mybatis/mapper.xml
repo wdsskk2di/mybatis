@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.care.mybatis.myMapper"><!-- namespace= mapper의 위치를 저장한 이름. 다른거 써도 o -->
+	<!-- 쿼리문 작성 -->	
+	<select id="listAll" resultType="dto">select * from mybatis_test</select>
+					<!-- mybatis_config.xml에서 만든 return 타입, dto-->
+</mapper>
