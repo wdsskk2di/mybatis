@@ -1,8 +1,21 @@
 package com.care.dao;
 
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import com.care.dto.TestDTO;
 
 @Repository
 public class TestDAO {
-
+	private static final String namespace = "com.care.mybatis.myMapper";	//mapper.xml에서 설정한 그 경로.
+	
+	@Autowired
+	private SqlSession sqlSession;
+	
+	public List<TestDTO> test(){	//기본경로 + "mapper에서 만든 실행할 아이디"
+		return sqlSession.selectList(namespace+".listAll");	//여러 데이터 받아오기 위한 selectList.. 하나는 selectOne
+	}
 }
