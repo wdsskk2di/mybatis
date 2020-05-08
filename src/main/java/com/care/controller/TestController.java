@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.care.dto.TestDTO;
 import com.care.service.TestService;
 
 @Controller
@@ -31,5 +32,17 @@ public class TestController {
 		service.list(model);
 		
 		return "list";
+	}
+	
+	@RequestMapping("inputdata")
+	public String inputdata() {
+		return "inputdata";
+	}
+	
+	@RequestMapping("savedata")
+	public String savedata(TestDTO dto) {
+		service.savedata(dto);
+		
+		return "redirect:test";
 	}
 }

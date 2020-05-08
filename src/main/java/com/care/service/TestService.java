@@ -1,5 +1,6 @@
 package com.care.service;
 
+import java.text.SimpleDateFormat;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.care.dao.TestDAO;
+import com.care.dto.TestDTO;
 
 @Service
 public class TestService {
@@ -25,5 +27,11 @@ public class TestService {
 		String num = request.getParameter("num");
 		
 		model.addAttribute("list", dao.list(num));
+	}
+	
+	public void savedata(TestDTO dto) {
+//		String mydate = dto.getMydate();
+//		SimpleDateFormat form = new SimpleDateFormat();
+		dao.savedata(dto);
 	}
 }
