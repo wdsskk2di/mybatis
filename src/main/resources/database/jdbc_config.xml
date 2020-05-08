@@ -16,8 +16,8 @@
 	
 	<!-- 연결할 파일들 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource" />
-		<property name="configLocation" value="classpath:mybatis/mybatis_config.xml" />
+		<property name="dataSource" ref="dataSource" />	<!-- 위 DB연결 해놓은 dataSource -->
+		<property name="configLocation" value="classpath:mybatis/mybatis_config.xml" /> <!-- mapper에서 쿼리문 결과값을 어떤 타입으로 가져올지 저장해둔 파일 -->
 		<property name="mapperLocations" value="classpath:mybatis/mapper.xml" />		<!-- mapper는 쿼리문 처리 기능 -->
 	</bean>		
 		<!-- sqlSession를 이용해 쿼리문 사용 -->
