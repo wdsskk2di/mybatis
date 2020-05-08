@@ -12,5 +12,9 @@
 			<!-- parameterType=매개변수 타입. 여기서는 TestDTO인 dto. 인자값은 생략이 가능 -->
 	<insert id="savedata" parameterType="dto">insert into mybatis_test values (#{num}, #{name}, #{mydate})</insert>
 	<update id="updatedata" parameterType="com.care.dto.TestDTO">update mybatis_test set name=#{name}, mydate=#{mydate} where num = #{num}</update>
+	
+	<!-- 내가한 삭제 기능 -->
 	<delete id="deletedata" parameterType="com.care.dto.TestDTO">delete mybatis_test where num=#{num}</delete>
+	<!-- 선생님 삭제 코드 -->
+	<delete id="delete" parameterType="String">delete from mybatis_test where num=#{num}</delete>
 </mapper>

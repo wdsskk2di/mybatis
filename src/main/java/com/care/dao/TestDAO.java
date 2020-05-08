@@ -38,10 +38,15 @@ public class TestDAO {
 		System.out.println("수정 결과값: "+result);
 	}
 	
-	//삭제
+	//내가 만든 삭제 기능
 	public void deletedata(TestDTO dto) {
 		int result = sqlSession.delete(namespace+".deletedata", dto);
 		System.out.println("삭제 결과값: "+result);
 		
+	}
+	
+	//선생님 삭제 코드
+	public void delete(String num) {
+		sqlSession.delete(namespace+".delete", num);
 	}
 }

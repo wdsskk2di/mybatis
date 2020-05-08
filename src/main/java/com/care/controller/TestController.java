@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.care.dto.TestDTO;
 import com.care.service.TestService;
@@ -58,14 +59,22 @@ public class TestController {
 		return "redirect:test";
 	}
 	
-	@RequestMapping("delete")
-	public String delete() {
-		return "delete";
+	//내가만든거.. 선생님은 a링크로 하심
+	@RequestMapping("deleteform")
+	public String deleteform() {
+		return "deleteform";
 	}
 	
 	@RequestMapping("deletedata")
 	public String deletedata(TestDTO dto) {
 		service.deletedata(dto);
+		return "redirect:test";
+	}
+	
+	//선생님 삭제 코드
+	@RequestMapping("delete")
+	public String delete(@RequestParam("num") String num) {
+		service.delete(num);
 		return "redirect:test";
 	}
 }

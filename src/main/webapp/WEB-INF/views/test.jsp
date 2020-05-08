@@ -10,7 +10,7 @@
 <body>
 
 <c:forEach items="${lists }" var="dto">
-	num: ${dto.num }<br>
+	num: <a href="delete?num=${dto.num }">${dto.num }</a><br>
 	name: ${dto.name }<br>
 	mydate: ${dto.mydate }<br><hr>
 </c:forEach>

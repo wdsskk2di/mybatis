@@ -36,7 +36,13 @@ public class TestService {
 		dao.updatedata(dto);
 	}
 	
+	//내가 만든 삭제
 	public void deletedata(TestDTO dto) {
 		dao.deletedata(dto);
+	}
+	
+	//선생님 삭제 코드
+	public void delete(String num) {
+		dao.delete(num);
 	}
 }
