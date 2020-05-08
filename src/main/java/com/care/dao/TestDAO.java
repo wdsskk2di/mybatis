@@ -15,7 +15,7 @@ public class TestDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public List<TestDTO> test(){	//기본경로 + "mapper에서 만든 실행할 아이디"
+	public List<TestDTO> test(){	//기본경로 + ".mapper에서 만든, 실행할 쿼리문의 아이디"
 		return sqlSession.selectList(namespace+".listAll");	//여러 데이터 받아오기 위한 selectList.. 하나는 selectOne
 	}
 }
