@@ -1,5 +1,7 @@
 package com.care.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,5 +20,16 @@ public class TestController {
 		return "test";
 	}
 	
+	@RequestMapping("input")
+	public String inputUserNum() {
+		return "inputUserNum";
+	}
 	
+	@RequestMapping("list")
+	public String list(Model model, HttpServletRequest re) {
+		model.addAttribute("request", re);
+		service.list(model);
+		
+		return "list";
+	}
 }

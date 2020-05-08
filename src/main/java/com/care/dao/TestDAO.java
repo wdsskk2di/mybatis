@@ -18,4 +18,8 @@ public class TestDAO {
 	public List<TestDTO> test(){	//기본경로 + ".mapper에서 만든, 실행할 쿼리문의 아이디"
 		return sqlSession.selectList(namespace+".listAll");	//여러 데이터 받아오기 위한 selectList.. 하나는 selectOne
 	}
+	
+	public TestDTO list(String num) {//기본경로 + ".mapper에서 만든, 실행할 쿼리문의 아이디", 입력받아서 넘겨줄값..(받는쪽은num = #{num}으로 받음)
+		return sqlSession.selectOne(namespace+".list",num);
+	}
 }
