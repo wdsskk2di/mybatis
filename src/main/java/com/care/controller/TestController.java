@@ -45,4 +45,27 @@ public class TestController {
 		
 		return "redirect:test";
 	}
+	
+	@RequestMapping("updateform")
+	public String updateform() {
+		return "updateform";
+	}
+	
+	@RequestMapping("updatedata")
+	public String updatedata(TestDTO dto) {
+		service.updatedata(dto);
+		
+		return "redirect:test";
+	}
+	
+	@RequestMapping("delete")
+	public String delete() {
+		return "delete";
+	}
+	
+	@RequestMapping("deletedata")
+	public String deletedata(TestDTO dto) {
+		service.deletedata(dto);
+		return "redirect:test";
+	}
 }

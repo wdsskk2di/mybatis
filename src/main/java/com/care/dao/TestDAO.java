@@ -15,16 +15,33 @@ public class TestDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	
+	//모든 목록
 	public List<TestDTO> test(){	//기본경로 + ".mapper에서 만든, 실행할 쿼리문의 아이디"
 		return sqlSession.selectList(namespace+".listAll");	//여러 데이터 받아오기 위한 selectList.. 데이터 하나는 selectOne 으로 받아온다
 	}
 	
+	
+	//검색
 	public TestDTO list(String num) {//기본경로 + ".mapper에서 만든, 실행할 쿼리문의 아이디", 입력받아서 넘겨줄값..(받는쪽은num = #{num}으로 받음)
 		return sqlSession.selectOne(namespace+".list",num);
 	}
 	
-	public void savedata(TestDTO dto) {
+	//추가
+	public void savedata(TestDTO dto) {		   // . <-- 입력 잊지 말것
 		int result = sqlSession.insert(namespace+".savedata",dto);
-		System.out.println("결과값: "+result);
+		System.out.println("추가 결과값: "+result);
+	}
+	
+	//수정
+	public void updatedata(TestDTO dto) {
+		int result = sqlSession.update(namespace+".updatedata", dto);
+		System.out.println("수정 결과값: "+result);
+	}
+	
+	//삭제
+	public void deletedata(TestDTO dto) {
+		int result = sqlSession.delete(namespace+".deletedata", dto);
+		System.out.println("삭제 결과값: "+result);
+		
 	}
 }

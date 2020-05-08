@@ -1,6 +1,5 @@
 package com.care.service;
 
-import java.text.SimpleDateFormat;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -30,8 +29,14 @@ public class TestService {
 	}
 	
 	public void savedata(TestDTO dto) {
-//		String mydate = dto.getMydate();
-//		SimpleDateFormat form = new SimpleDateFormat();
 		dao.savedata(dto);
+	}
+	
+	public void updatedata(TestDTO dto) {
+		dao.updatedata(dto);
+	}
+	
+	public void deletedata(TestDTO dto) {
+		dao.deletedata(dto);
 	}
 }

@@ -9,7 +9,8 @@
 																		<!-- #{num} 이란? TestDAO에서 ,num으로 설정해서 넘겨준 값을 받아오는 것 -->
 	<select id="list" resultType="dto">select * from mybatis_test where num=#{num}</select>
 	
-			<!-- parameterType=매개변수 타입. 여기서는 TestDTO인 dto -->
+			<!-- parameterType=매개변수 타입. 여기서는 TestDTO인 dto. 인자값은 생략이 가능 -->
 	<insert id="savedata" parameterType="dto">insert into mybatis_test values (#{num}, #{name}, #{mydate})</insert>
-	
+	<update id="updatedata" parameterType="com.care.dto.TestDTO">update mybatis_test set name=#{name}, mydate=#{mydate} where num = #{num}</update>
+	<delete id="deletedata" parameterType="com.care.dto.TestDTO">delete mybatis_test where num=#{num}</delete>
 </mapper>
